@@ -1,4 +1,4 @@
-const cpfValidator = require('../index.js');
+const cpfValidator = require('./index.js');
 
 test('585.616.790-26 should be GOOD!', () => {
   expect(cpfValidator('585.616.790-26')).toBe(true);
