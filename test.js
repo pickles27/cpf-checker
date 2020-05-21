@@ -8,6 +8,14 @@ test('Return true for valid CPF!', () => {
   expect(cpfValidator('676.717.355-07')).toBe(true);
 });
 
+test('Return true for valid CPF in numeric form!', () => {
+  expect(cpfValidator(58561679026)).toBe(true);
+  expect(cpfValidator(41762638304)).toBe(true);
+  expect(cpfValidator(40658345460)).toBe(true);
+  expect(cpfValidator(27489847656)).toBe(true);
+  expect(cpfValidator(67671735507)).toBe(true);
+});
+
 test('Return false for invalid CPF!', () => {
   expect(cpfValidator('585.616.790-27')).toBe(false);
 });
@@ -47,3 +55,4 @@ test('Returns false for null input!', () => {
 test('Returns false for empty string!', () => {
   expect(cpfValidator('')).toBe(false);
 });
+

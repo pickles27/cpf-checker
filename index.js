@@ -16,7 +16,7 @@ const validTypes = ['string', 'number'];
 const isValidType = type => validTypes.includes(typeof type);
 const isBlacklisted = input => BLACKLIST.includes(input);
 const isValidLength = string => string.length === 11;
-const isValidChars = string => string.match(/^[0-9\-\.]*$/);
+const isValidChars = string => typeof string === 'number' || string.match(/^[0-9\-\.]*$/);
 const sanitize = input => {
   if (typeof input === 'number') {
     input = input.toString();
