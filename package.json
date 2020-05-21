@@ -1,0 +1,26 @@
+{
+  "name": "cpf-checker",
+  "version": "0.0.1",
+  "description": "Checks your CPFs",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pickles27/cpf-checker.git"
+  },
+  "author": "Sarah Pickrahn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pickles27/cpf-checker/issues"
+  },
+  "homepage": "https://github.com/pickles27/cpf-checker#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "type": "module"
+}
