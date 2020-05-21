@@ -16,11 +16,12 @@ const validTypes = ['string', 'number'];
 const isValidType = type => validTypes.includes(typeof type);
 const isBlacklisted = input => BLACKLIST.includes(input);
 const isValidLength = string => string.length === 11;
+const isValidChars = string => string.match(/^[0-9\-\.]*$/);
 const sanitize = input => {
   if (typeof input === 'number') {
     input = input.toString();
   }
-  return input.replace(/[^0-9]/g, '');
+  return input.replace(/(\s|-|\.)/g, '');
 };
 const verificationDigit = cpfString => {
   const modulus = cpfString.length + 1;
@@ -33,7 +34,7 @@ const verificationDigit = cpfString => {
 };
 
 module.exports = function (input) {
-  if (!isValidType(input)) {
+  if (!isValidType(input) || !isValidChars(input)) {
     return false;
   }
   const cpf = sanitize(input);
