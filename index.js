@@ -1,6 +1,6 @@
 'use strict';
 
-const BLACKLIST = [
+const BLACKLIST = new Set([
   '00000000000',
   '11111111111',
   '22222222222',
@@ -12,11 +12,11 @@ const BLACKLIST = [
   '88888888888',
   '99999999999',
   '12345678909'
-];
-const validTypes = ['string', 'number'];
+]);
+const validTypes = new Set(['string', 'number']);
 
-const isValidType = type => validTypes.includes(typeof type);
-const isBlacklisted = input => BLACKLIST.includes(input);
+const isValidType = type => validTypes.has(typeof type);
+const isBlacklisted = input => BLACKLIST.has(input);
 const isValidLength = string => string.length === 11;
 const isValidChars = string => typeof string === 'number' || string.match(/^[0-9\-\.]*$/);
 const sanitize = input => {
