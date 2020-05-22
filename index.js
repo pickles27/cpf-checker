@@ -25,11 +25,11 @@ const sanitize = input => {
   }
   return input.replace(/(\s|-|\.)/g, '');
 };
-const verificationDigit = cpfString => {
-  const modulus = cpfString.length + 1;
+const verificationDigit = cpfBase => {
+  const modulus = cpfBase.length + 1;
   let sum = 0;
-  for (let i = 0; i < cpfString.length; i++) {
-    sum += parseInt(cpfString[i], 10) * (modulus - i);
+  for (let i = 0; i < cpfBase.length; i++) {
+    sum += parseInt(cpfBase[i], 10) * (modulus - i);
   }
   const remainder = sum % 11;
   return remainder < 2 ? 0 : 11 - remainder;
