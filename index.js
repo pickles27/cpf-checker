@@ -1,3 +1,5 @@
+'use strict';
+
 const BLACKLIST = [
   '00000000000',
   '11111111111',
