@@ -17,5 +17,7 @@ the function returns a boolean, true for valid cpf, and false for invalid
 for example:
 
 cpfChecker('469.352.008-06') => returns true
+
 cpfChecker('46935200806') => returns true
+
 cpfChecker(46935200806) => returns true
