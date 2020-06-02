@@ -1,6 +1,6 @@
 {
   "name": "cpf-checker",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Checks your CPFs",
   "main": "index.js",
   "directories": {
