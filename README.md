@@ -14,6 +14,7 @@ the cpf can be in the form:
 
 
 the function returns a boolean, true for valid cpf, and false for invalid
+
 for example:
 
 cpfChecker('469.352.008-06') => returns true
