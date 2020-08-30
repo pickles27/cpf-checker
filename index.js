@@ -1,6 +1,6 @@
 'use strict';
 
-const BLACKLIST = new Set([
+const DENYLIST = new Set([
   '00000000000',
   '11111111111',
   '22222222222',
@@ -16,7 +16,7 @@ const BLACKLIST = new Set([
 const validTypes = new Set(['string', 'number']);
 
 const isValidType = type => validTypes.has(typeof type);
-const isBlacklisted = input => BLACKLIST.has(input);
+const isBlocked = input => DENYLIST.has(input);
 const isValidLength = string => string.length === 11;
 const isValidChars = string => typeof string === 'number' || string.match(/^[0-9\-\.]*$/);
 const sanitize = input => {
@@ -41,7 +41,7 @@ module.exports = function (input) {
   }
   const cpf = sanitize(input);
 
-  if (!isValidLength(cpf) || isBlacklisted(cpf)) {
+  if (!isValidLength(cpf) || isBlocked(cpf)) {
     return false;
   }
 

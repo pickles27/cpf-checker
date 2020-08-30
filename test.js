@@ -20,7 +20,7 @@ test('Return false for invalid CPF!', () => {
   expect(cpfValidator('585.616.790-27')).toBe(false);
 });
 
-test('Blacklisted CPFs are not allowed!', () => {
+test('CPFs on the deny list are not allowed!', () => {
   expect(cpfValidator('111.111.111-11')).toBe(false);
 });
 
